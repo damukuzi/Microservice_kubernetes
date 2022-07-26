@@ -44,7 +44,13 @@ source .devops/bin/activate
 
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
+* Setup and Configure Docker locally `brew cask install docker`
 * Setup and Configure Kubernetes locally
+`brew cask install virtualbox`
+`brew cask install minikube`
 * Create Flask app in Container
+`docker build --tag udacityv1app .`
 * Run via kubectl
+`kubectl run udacityv1app\
+    --image=$dockerpath\
+    --port=80 --labels app=udacityv1app`
